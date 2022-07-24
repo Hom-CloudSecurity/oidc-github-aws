@@ -7,8 +7,7 @@ terraform {
       region = var.aws_region
     }
   }
-
-  required_version = ">= 1.2.0"
+required_version = ">= 1.2.0"
 }
 
 data "aws_ami" "ubuntu_server" {
