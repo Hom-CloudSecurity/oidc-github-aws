@@ -18,10 +18,9 @@ jobs:
       - name: Terraform Init
         run: |
             terraform init
-            ls 
       - name: Terraform Validate
         run: |
-            terrform validate
+            terraform validate
       - name: Terraform Apply
         run: |
             terraform apply -auto-approve
