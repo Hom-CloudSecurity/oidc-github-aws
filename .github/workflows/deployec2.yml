@@ -1,0 +1,25 @@
+name: DeployeEc2Instance
+on: [workflow_dispatch]
+jobs:
+  TerraformWillbInActionsoon:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          role-to-assume: arn:aws:iam::112148829372:role/GitHub-action-role
+          aws-region: us-east-2
+          role-session-name: EC2session
+      - name: Terraform Init
+        run: |
+            terraform init
+            ls 
+      - name: Terraform Validate
+        run: |
+            terrform validate
+      - name: Terraform Apply
+        run: |
+            terraform apply -auto-approve
+          
