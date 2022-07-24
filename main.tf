@@ -4,14 +4,11 @@ terraform {
     aws = {
       source  = "hashicorp/aws"
       version = "~> 4.16"
+      region = var.aws_region
     }
   }
 
   required_version = ">= 1.2.0"
-}
-provider "aws" {
-  version = "~> 3.0"
-  region  = var.aws_region
 }
 
 data "aws_ami" "ubuntu_server" {
