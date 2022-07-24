@@ -10,6 +10,7 @@ terraform {
 required_version = ">= 1.2.0"
 }
 
+
 data "aws_ami" "ubuntu_server" {
   most_recent = true
   owners = ["099720109477"]
