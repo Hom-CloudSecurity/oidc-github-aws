@@ -4,12 +4,14 @@ terraform {
     aws = {
       source  = "hashicorp/aws"
       version = "~> 4.16"
-      region = var.aws_region
     }
   }
-required_version = ">= 1.2.0"
 }
 
+# Configure the AWS Provider
+provider "aws" {
+  region = "us-east-1"
+}
 
 data "aws_ami" "ubuntu_server" {
   most_recent = true
